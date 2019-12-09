@@ -47,7 +47,7 @@ Update_Check: true
 # List any worlds you don't want DeluxeHub to manage, 
 # Note: This does not disable commands except custom commands!
 Disabled_Worlds:
-  - world
+  - world2
   
 # This will make the the plugin ONLY work in worlds
 # in the 'Disabled_Worlds' list, making the blacklist a whitelist
@@ -353,8 +353,22 @@ Server_Selector:
         Lore:
           - '&7Join now!'
         Commands:
+          - '[bungee] factions'
           - '[message] &7Sending you to: &eFactions'
-          - '[consolecommand] mvtp %player% world'
+         # For multi-world servers using Multiverse-Core:
+         # - '[consolecommand] mvtp %player% <worldname>'
+      survival:
+        Item: GRASS
+        Slot: 15
+        Amount: 1
+        Glow: false
+        Name: '&aSurvival'
+        Lore:
+          - '&7Join now!'
+          - '&aMulti lore support too!'
+        Commands:
+          - '[bungee] survival'
+          - '[message] &7Sending you to: &eSurvival'
         
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 # PLAYER HIDER
