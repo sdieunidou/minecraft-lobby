@@ -1,0 +1,386 @@
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+#  _____       _                _    _       _        #
+# |  __ \     | |              | |  | |     | |       #
+# | |  | | ___| |_   ___  _____| |__| |_   _| |__     #
+# | |  | |/ _ \ | | | \ \/ / _ \  __  | | | | '_ \    #
+# | |__| |  __/ | |_| |>  <  __/ |  | | |_| | |_) |   #
+# |_____/ \___|_|\__,_/_/\_\___|_|  |_|\__,_|_.__/    #                                              
+#                                                     #
+#               -- By ItsLewizzz --                   #
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=#
+# 
+# BUILT IN PLUGIN PLACEHOLDERS - 
+# 
+# %player% - Returns player name
+# %location% - Returns player location
+# %online% - Returns number of players online
+# %online_max% - Returns number of max player slots
+# %date% - Returns current date
+# 
+#        *** USE PLACEHOLDERAPI TO GET MORE ***
+#  (https://www.spigotmc.org/resources/placeholderapi.6245/)
+# 
+# 
+# 
+# VALID ACTIONS -
+# 
+# [message] - Send a message to the player
+# [broadcastmessage] - Broadcast a message to everyone
+# [title] e.g. MainTitle;Subtitle;FadeIn;Stay:FadeOut - Send the player a title message
+# [sound] - Send the player a sound
+# [command] - Execute a command as the player
+# [consolecommand] - Execute a command as console
+# [gamemode] - Change a players' gamemode
+# [bungee] - Send a player to a server
+# 
+# 
+# MESSAGE FORMATTING -
+# <center> Centered message! </center> - Centers a message in chat
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | GENERAL SETTINGS                         |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+# Recommended to keep this true
+Update_Check: true
+
+# List any worlds you don't want DeluxeHub to manage, 
+# Note: This does not disable commands except custom commands!
+Disabled_Worlds:
+  - world
+  
+# This will make the the plugin ONLY work in worlds
+# in the 'Disabled_Worlds' list, making the blacklist a whitelist
+Disabled_Worlds_Is_Enabled_Worlds: false
+
+# Date formatting for the %date% placeholder
+Date_Format: "dd-MM-yyyy"
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | ANTI-WORLD DOWNLOADER                    | 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+# Prevent users downloading your world via the world downloader mod
+AntiWDL:
+  # Should AntiWDL be enabled?
+  Enabled: true
+  
+  # Should players with 'deluxehub.antiwdl.alert' will be notified?
+  Notify_Admins: true
+  
+  # There is no need to kick the player if he is running WDL as our system hooks into the mod to prevent a world download
+  
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | SCOREBOARD                               |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Scoreboard:
+  # Should the scoreboard feature be enabled?
+  Enabled: false
+
+  # How often should the scoreboard update (in ticks)? 
+  # 20 TICKS = 1 SECOND
+  # 
+  # Default value is 100 ticks update (5 seconds)
+  Refresh_Rate: 100
+
+  Title: "&d&lmTxServ.com &7(%online%/%online_max%)"
+  Lines:
+  - "&7&m----------------------"
+  - "&6&lPlayer:"
+  - "&f%player%"
+  - "&9Online: '%online%"
+  - "&9Money: '%money%"
+  - "&9YourPower: '%power%"
+  - "&9FactionPower: '%f_power%"
+  - "&9Faction: '%members%"
+
+  - ""
+  - "&6play.mtxserv.com"
+  - "&7&m---------------------"
+  
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# |TABLIST                                   |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Tablist:
+  # Should the tablist feature be enabled?
+  Enabled: true  
+
+  # How often should the tablist update (in ticks)? 
+  # 20 TICKS = 1 SECOND
+  # 
+  # Default value is 400 ticks update (20 seconds)
+  Refresh_Rate:
+    Enabled: true
+    Rate: 400
+  
+  # USE "\n" TO CREATE A NEW LINE
+  Header: "&r\n&d&lmTxServ.com &7(%online%/%online_max%)\n"
+
+  Footer: "&r\n  &6&lWebsite &fmtxserv.com\n"
+ 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | AUTO BROADCAST                           |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Announcements:
+  # Should the announcements system be enabled ?
+  Enabled: true
+
+  # Delay to send announcements (in seconds)
+  Delay: 60
+  
+  # Announcement list
+  Announcements:
+    test1:
+      - '[broadcastmessage] &r'
+      - '[broadcastmessage] <center>&e&l* &6&lBy mTxServ.com &e&l*</center>'
+      - '[broadcastmessage] <center>&fThis server was created on mTxServ.com</center>'
+      - '[broadcastmessage] &r'
+   
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# LAUNCHPAD
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Launchpad:
+  # Should the launchpad feature be enabled ?
+  Enabled: false
+
+  # Launch power for launchpad
+  Launch_Power: 3.0
+  Launch_Power_Y: 1.0
+
+  # Top and bottom block required to make a launchpad
+  Top_Block: STONE_PRESSURE_PLATE
+  Bottom_Block: REDSTONE_BLOCK
+
+  # Actions executed upon use of a launchpad
+  Actions:
+  - '[sound] ENTITY_BAT_TAKEOFF'
+  - '[message] &6&lLAUNCHPAD &eWhoosh!'
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# DOUBLE JUMP
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Double_Jump:
+  # Should the double jump feature be enabled?
+  Enabled: true
+  
+  # Launch power for double jump
+  Launch_Power: 1.0
+  Launch_Power_Y: 0.8
+  
+  # Cooldown time in seconds
+  # Set to 0 to disable cooldown
+  Cooldown: 3
+
+  # Actions executed upon use of double jump
+  Actions:
+  - '[sound] ENTITY_BAT_TAKEOFF'
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# CHAT MANAGEMENT
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Command_Blocker:
+  # Should the command blocker feature be enabled?
+  Enabled: false
+  
+  # If set to true then it will override the disabled worlds list
+  Enabled_In_Disabled_Worlds: false
+
+  # List of commands that will be blocked
+  Blocked_Commands:
+    - /pl
+    - /plugins
+    - /?
+    - /bukkit:?
+    - /bukkit:plugins
+    - /bukkit:pl
+    - /bukkit:help
+    - /ver
+    - /version
+    - /bukkit:version
+    - /bukkit:ver
+  
+Anti-Swear:
+  # Should the anti-swear feature be enabled?
+  Enabled: true
+
+  # List of words that will be blocked
+  Blocked_Words:
+    - fuck
+    - shit
+    - bitch
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# WORLD EVENTS SETTINGS
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+World_Settings:
+  Disable_Hunger_Loss: true
+  Disable_Fall_Damage: true
+  Disable_Weather_Change: true
+  Disable_Death_Message: true
+  Disable_Fire_Spread: true
+  Disable_Leaf_Decay: true
+  Disable_Mob_Spawning: true
+  Disable_Block_Burning: true
+  Disable_Void_Death: true
+  Disable_Item_Drop: true
+  Disable_Item_Pickup: true
+  Disable_Block_Break: true
+  Disable_Block_Place: true
+  Disable_Block_Interact: true
+  Disable_Player_PvP: true
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# JOIN EVENTS
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Join_Leave_Messages:
+  # Should deluxehub handle join/quit messages?
+  Enabled: true
+
+  # Set to '' if you want silent join/quit messages
+  Join: '&2&l+ &6%player% &7Connected'
+  Quit: '&4&l- &6%player% &7Disconnected'
+
+# Actions executed upon join
+Join_Events:
+  - '[gamemode] survival'
+  - '[message] &8&m+------------***------------+'
+  - '[message] &r'
+  - '[message]           &e&l* &6&lW E L C O M E &e&l*'
+  - '[message] &e              &e%player%     '
+  - '[message] &r'
+  - '[message] &7&oUse /lobby to return on Lobby'
+  - '[message] &8&m+------------***------------+'
+  - '[title] &6&l* &e&lWELCOME &6&l*;&6%player%;1;3;1'
+  - '[sound] ENTITY_PLAYER_LEVELUP'
+  - '[effect] SPEED;1'
+
+# Extra join events
+Player_Join_Settings:
+  # Should we teleport the player to the spawn point (if set) on join?
+  Spawn_Join: true
+  # Should we heal the player?
+  Heal: true
+  # Should we extinguish the player?
+  Extinguish: true
+  # Should we clear their inventory?
+  Clear_Inventory: false
+  # Spawn a firework on join
+  Firework:
+    Enabled: true
+    FirstJoinOnly: false
+    Type: BALL_LARGE
+    Power: 1
+    Flicker: true
+    Trail: true
+    Colors:
+    - AQUA
+    - RED
+    - TEAL
+    - WHITE
+
+Custom_Join_Items:
+  # Should custom join items be enabled? (This does not affect the Server Selector and Player Hider items, see provided sections)
+  Enabled: true
+  # Should we prevent them from moving/dropping the items?
+  Disable_Inventory_Movement: true
+  
+  Items:
+    infobook:
+      Item: BOOK
+      Amount: 1
+      Slot: 0
+      Name: '&dServer Information &7(Right-Click)' 
+      Lore:
+      - '&7Right-click to see information about the server!'
+      Actions:
+        - '[message] &r'
+        - '[message] &e&lServer Information'
+        - '[message] &r'
+        - '[message] &bWebsite: &fmtxserv.com'
+        - '[message] &dDiscord: &fhttps://discordapp.com/invite/yfcnSbT'
+        - '[message] &r'
+    
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# SERVER SELECTOR
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# You can use PlaceholderAPI in the lore section
+# of each item in the GUI for example to display
+# how many players are on each server using the
+# PAPI Bungee expansion!
+
+Server_Selector:
+  # Should the server selector be enabled?
+  Enabled: true
+
+  # Should we prevent them from moving/dropping the item?
+  Disable_Inventory_Movement: true
+
+  # The filler item fills the inventory if there is any blank item slots
+  Filler_Item:
+    Enabled: true
+    Item: GRAY_STAINED_GLASS_PANE
+    Amount: 1
+    Name: '&r'
+
+  # Item for the server selector
+  Item: NETHER_STAR
+  Amount: 1
+  Slot: 1
+  Name: '&eServer Selector &7(Right-Click)'
+  Lore: 
+    - '&7Click to open the server selector!'
+  
+  # GUI for the Server Selector
+  GUI:
+    Name: 'Server Selector'
+    Slots: 27
+    Items:
+      factions:
+        Item: TNT
+        Slot: 0
+        Amount: 1
+        Glow: true
+        Name: '&eFactions'
+        Lore:
+          - '&7Join now!'
+        Commands:
+          - '[message] &7Sending you to: &eFactions'
+          - '[consolecommand] mvtp %player% world'
+        
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# PLAYER HIDER
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+Player_Hider:
+  # Should false player hider feature be enabled?
+  Enabled: false
+  # Slot the item should be given to?
+  Slot: 8
+  # Should we prevent them from moving/dropping the item?
+  Disable_Inventory_Movement: true
+  # Cooldown in seconds
+  # Set to 0 to disable
+  Cooldown: 3
+
+  Not_Hidden:
+    Item: LIME_DYE
+    Amount: 1
+    Name: '&dPlayers &8&l> &aShown &7(Right-Click)'
+    Lore: 
+      - '&7Click to hide all players!'
+      
+  Hidden:
+    Item: GRAY_DYE
+    Amount: 1
+    Name: '&dPlayers &8&l> &cHidden &7(Right-Click)'
+    Lore: 
+      - '&7Click to show all players!'

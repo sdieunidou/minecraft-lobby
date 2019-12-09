@@ -1,0 +1,64 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# COMMAND SETTINGS
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+# YOU MUST ** RESTART YOUR SERVER ** IF YOU MODIFY THESE VALUES BELOW TO TAKE EFFECT
+
+Commands:
+  gamemode:
+    Enabled: false
+    Aliases:
+      - gm
+  gmc:
+    Enabled: false
+    Aliases: []
+  gma:
+    Enabled: false
+    Aliases: []
+  gms:
+    Enabled: false
+    Aliases: []
+  gmsp:
+    Enabled: false
+    Aliases: []
+  clearchat:
+    Enabled: false
+    Aliases: []
+  clearinventory:
+    Enabled: false
+    Aliases:
+      - ci
+  fly:
+    Enabled: true
+    Aliases: []
+  heal:
+    Enabled: true
+    Aliases: []
+  lockchat:
+    Enabled: true
+    Aliases:
+      - lc
+  setlobby:
+    Enabled: true
+    Aliases: []
+  lobby:
+    Enabled: true
+    Aliases: []
+  vanish:
+    Enabled: false
+    Aliases:
+      - v
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# CUSTOM COMMANDS
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+# You do not need to restart your server if you edit anything below here
+
+Custom-Commands:
+  website:
+    Command: website
+    Aliases:
+      - web
+    Actions:
+      - '[message] &bWebsite: &fmtxserv.com'
