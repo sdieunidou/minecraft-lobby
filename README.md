@@ -46,5 +46,5 @@ lp group admin permission set deluxehub.* true
 lp group admin permission set vault.* true
 lp group admin permission set matrix.* true
 lp group admin permission set placeholderapi.* true
-lp group default permission set scoreboard.use true
+lp group default permission set deluxehub.scoreboard true
 ```
