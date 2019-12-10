@@ -2,18 +2,11 @@ name: admin
 permissions:
 - bukkit.command.*
 - deluxehub.*
-- factions.*
-- gemseconomy.*
 - luckperms.*
 - matrix.*
 - minecraft.command.*
-- multiverse.*
 - placeholderapi.*
-- scoreboardstats.*
 - vault.*
-- worldborder.*
-- worldedit.*
-- worldguard.*
 parents:
 - default
 prefixes:
