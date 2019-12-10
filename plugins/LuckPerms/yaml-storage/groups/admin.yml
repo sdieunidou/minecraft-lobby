@@ -1,10 +1,10 @@
 name: admin
 permissions:
 - bukkit.command.*
+- minecraft.command.*
 - deluxehub.*
 - luckperms.*
 - matrix.*
-- minecraft.command.*
 - placeholderapi.*
 - vault.*
 parents:
