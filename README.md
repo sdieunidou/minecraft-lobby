@@ -4,3 +4,4 @@
 * LuckPerms
 * PlaceholderAPI
 * Vault
+* Matrix
