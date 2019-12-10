@@ -6,7 +6,8 @@ Feel free to contribute ;)
 
 ## Requirements
 
-* Spigot / Paper 1.15
+* Compatible with latest version (1.14)
+* Spigot, Paper or BungeeCord
 
 ## Plugins Pack
 
