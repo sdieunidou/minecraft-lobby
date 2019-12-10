@@ -21,7 +21,7 @@ Feel free to contribute ;)
 
 LuckPerms is included with two groups:
 
-* Admin (admin group
+* Admin (admin group)
 * Default (default permission group)
 
 To add full rights to an user:
